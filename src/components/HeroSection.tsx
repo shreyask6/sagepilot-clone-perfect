@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import chatInterfaceMockup from "@/assets/chat-interface-mockup.png";
+import unifiedInterfaceMockup from "@/assets/unified-interface-mockup.png";
 
 const scrollingTexts = [
   "Turning Browsers into Loyal Customers",
@@ -37,7 +37,9 @@ export const HeroSection = () => {
                 {[...scrollingTexts, ...scrollingTexts].map((text, index) => (
                   <h2 
                     key={index}
-                    className="text-4xl lg:text-5xl font-bold text-animate whitespace-nowrap"
+                    className={`text-4xl lg:text-5xl font-bold whitespace-nowrap ${
+                      text === "Running Your Business Workflows" ? "text-sage-green" : "text-foreground"
+                    }`}
                   >
                     {text}
                   </h2>
@@ -82,11 +84,11 @@ export const HeroSection = () => {
         <div className="relative animate-slide-in-right">
           <div className="relative">
             <img 
-              src={chatInterfaceMockup}
+              src={unifiedInterfaceMockup}
               alt="Unified customer service interface showing multiple communication channels"
               className="w-full h-auto rounded-2xl shadow-elevated glass-green animate-float"
             />
-            <div className="absolute -top-4 -right-4 bg-sage-green text-sage-green-dark px-3 py-1 rounded-full text-sm font-medium shadow-green">
+            <div className="absolute -top-4 -right-4 bg-sage-green text-white px-3 py-1 rounded-full text-sm font-medium shadow-green">
               Unified Experience, Multiple Channels
             </div>
           </div>
