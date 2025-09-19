@@ -34,7 +34,7 @@ export const FeaturesSection = () => {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold">
             Meet your human-like AI employees who truly get your brand
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -44,6 +44,32 @@ export const FeaturesSection = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             They handle millions of interactions and work seamlessly with your tools - helping you scale without scaling headcount.
           </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {features.map((feature, index) => (
+            <div key={index} className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+              <div className="space-y-4">
+                <div className="inline-block">
+                  <span className="bg-sage-green/10 text-sage-green-dark px-3 py-1 rounded-full text-sm font-medium">
+                    {feature.highlight}
+                  </span>
+                </div>
+                <h3 className="text-3xl font-bold">{feature.title}</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+              
+              <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <img 
+                  src={feature.image}
+                  alt={feature.title}
+                  className="w-full h-auto rounded-2xl shadow-elevated"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
