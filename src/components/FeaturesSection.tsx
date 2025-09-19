@@ -1,34 +1,3 @@
-import analyticsImage from "@/assets/analytics-dashboard.png";
-import crmImage from "@/assets/crm-interface.png";
-import chatInterfaceImage from "@/assets/chat-interface-mockup.png";
-
-const features = [
-  {
-    title: "Plug and Play AI, No Strings Attached",
-    description: "Effortlessly integrate our AI agents across Freshdesk, Zendesk, and third-party platforms. No time-consuming technical headaches needed.",
-    image: chatInterfaceImage,
-    highlight: "Get Started Seamlessly!"
-  },
-  {
-    title: "Unified Conversations View",
-    description: "Manage all customer interactions from various channels in one centralized view. Monitor live agent conversations with customers and handle escalated interactive conversations.",
-    image: analyticsImage,
-    highlight: "Stay in Control"
-  },
-  {
-    title: "Comprehensive Analytics",
-    description: "Get real-time insights into your customer service performance, AI agent effectiveness, and customer metrics tracking data about your support operations.",
-    image: analyticsImage,
-    highlight: "Data-Driven Decisions"
-  },
-  {
-    title: "Custom Knowledge Base",
-    description: "Build a repository of important resources, product agents to provide precise and effective support.",
-    image: crmImage,
-    highlight: "Smart Knowledge Management"
-  }
-];
-
 export const FeaturesSection = () => {
   return (
     <section className="py-24 bg-background">

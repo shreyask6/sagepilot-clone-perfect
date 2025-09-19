@@ -26,7 +26,7 @@ export const HeroSection = () => {
           </Badge>
           
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-foreground">
               Meet Your New{" "}
               <br />
               AI Employee That's...
