@@ -31,24 +31,24 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-sage-gray-light">
-      <div className="container mx-auto px-6">
-        <div className="text-center space-y-4 mb-16">
+    <section className="py-16 md:py-24 bg-sage-gray-light">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center space-y-4 mb-12 md:mb-16">
           <Badge variant="outline" className="bg-sage-green/10 text-sage-green-dark border-sage-green/20 px-4 py-2">
             Customer Stories
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             Trusted by innovative companies worldwide
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             See how businesses like yours are transforming their customer operations with AI employees
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="glass border-0 shadow-soft hover:shadow-elevated transition-all duration-300">
-              <CardContent className="p-8 space-y-6">
+              <CardContent className="p-6 md:p-8 space-y-6">
                 <div className="flex items-center space-x-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-sage-green text-sage-green" />

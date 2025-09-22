@@ -49,11 +49,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         sage: {
-          green: "hsl(var(--sage-green))",
-          "green-dark": "hsl(var(--sage-green-dark))",
-          "green-light": "hsl(var(--sage-green-light))",
-          gray: "hsl(var(--sage-gray))",
-          "gray-light": "hsl(var(--sage-gray-light))",
+          green: "#10B981",
+          "green-dark": "#059669", 
+          "green-light": "#A7F3D0",
+          gray: "#6B7280",
+          "gray-light": "#F3F4F6",
         },
       },
       backgroundImage: {

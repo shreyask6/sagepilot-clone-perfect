@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:sagepilot.ai)",
+      "WebSearch",
+      "WebFetch(domain:www.sagepilot.ai)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run lint)"
+    ]
+  },
+  "allowedTools": [
+    "Edit",
+    "Read",
+    "Write",
+    "Bash(git add:*)",
+    "Bash(git commit:*)",
+    "Bash(npm:*)",
+    "Bash(python:*)",
+    "Bash(pytest:*)"
+  ]
+}

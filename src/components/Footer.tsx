@@ -34,8 +34,8 @@ const footerLinks = {
 export const Footer = () => {
   return (
     <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-2">
               <img 
@@ -48,7 +48,7 @@ export const Footer = () => {
               Transform your customer operations with AI employees that work like humans, 
               scale like software, and deliver results 24/7.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-4">
               <a href="#" className="text-muted-foreground hover:text-sage-green transition-colors">
                 Twitter
               </a>
@@ -116,7 +116,7 @@ export const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © 2024 SagePilot AI. All rights reserved.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap gap-4 md:gap-6">
             {footerLinks.legal.map((link) => (
               <a 
                 key={link.name}

@@ -3,26 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SagePilot AI - Meet Your New AI Employee That's Running Your Business Workflows</title>
-    <meta name="description" content="Deliver exceptional customer engagement at scale with Sagepilot's human-like AI employees. Provide personalized, 24/7 customer service across all channels throughout the customer journey." />
-    <meta name="author" content="SagePilot AI" />
-    <meta name="keywords" content="AI customer service, AI employees, customer support automation, conversational AI, business workflows, 24/7 customer service" />
+    <title>BuilderOps - Custom AI Agents, Apps, Websites & Automation | builderops.dev</title>
+    <meta name="description" content="We build whatever you need - AI agents, web apps, websites, automations, and more. Custom solutions shipped fast. Book a call to discuss your project." />
+    <meta name="author" content="BuilderOps" />
+    <meta name="keywords" content="AI agents, custom apps, web development, automation, mobile apps, internal tools, product prototypes, full-stack development" />
 
-    <meta property="og:title" content="SagePilot AI - AI Employees for Customer Service" />
-    <meta property="og:description" content="Transform your customer operations with AI employees that work like humans, scale like software, and deliver results 24/7." />
+    <meta property="og:title" content="BuilderOps - Custom AI Agents, Apps, Websites & Automation" />
+    <meta property="og:description" content="We build whatever you need - AI agents, web apps, websites, automations, and more. Custom solutions shipped fast." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sagepilot.ai/" />
-    <meta property="og:image" content="https://sagepilot.ai/og-image.png" />
+    <meta property="og:url" content="https://builderops.dev/" />
+    <meta property="og:image" content="https://builderops.dev/og-image.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@sagepilot_ai" />
-    <meta name="twitter:title" content="SagePilot AI - AI Employees for Customer Service" />
-    <meta name="twitter:description" content="Transform your customer operations with AI employees that work like humans, scale like software, and deliver results 24/7." />
-    <meta name="twitter:image" content="https://sagepilot.ai/og-image.png" />
+    <meta name="twitter:site" content="@builderops" />
+    <meta name="twitter:title" content="BuilderOps - Custom AI Agents, Apps, Websites & Automation" />
+    <meta name="twitter:description" content="We build whatever you need - AI agents, web apps, websites, automations, and more. Custom solutions shipped fast." />
+    <meta name="twitter:image" content="https://builderops.dev/og-image.png" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // --- Pop-out animation on load and after page refresh ---
+      window.addEventListener('load', () => {
+        requestAnimationFrame(() => {
+          document.getElementById('siteHeader')?.classList.add('is-visible');
+          setHeaderOffsetVar();               // set scroll offset for anchors
+        });
+      });
+
+      // --- Recompute offset if the header size changes (e.g., responsive) ---
+      const ro = new ResizeObserver(setHeaderOffsetVar);
+      const headerEl = document.getElementById('siteHeader');
+      if (headerEl) ro.observe(headerEl);
+
+      function setHeaderOffsetVar(){
+        const header = document.getElementById('siteHeader');
+        if(!header) return;
+        const h = header.getBoundingClientRect().height + parseInt(getComputedStyle(header).top || 0);
+        document.documentElement.style.setProperty('--header-offset', (h + 12) + 'px'); // small cushion
+      }
+
+      // --- Smooth-scroll with correct offset for in-page anchors ---
+      // Works for #contact, #services, #about, #work (and any other #id)
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if(!a) return;
+
+        const id = a.getAttribute('href');
+        if(id.length <= 1) return;
+
+        const target = document.querySelector(id);
+        if(!target) return;
+
+        e.preventDefault();
+        const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 0;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+
+        // collapse mobile menus etc. if you add them later
+      });
+
+      // --- Ensure native anchor jumps (e.g., direct URL with #hash) have offset too ---
+      window.addEventListener('hashchange', () => {
+        const el = document.querySelector(location.hash);
+        if (!el) return;
+        const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 0;
+        const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top });
+      });
+
+      // Optional: give each section a CSS scroll-margin in case JS is disabled
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('section[id]').forEach(sec=>{
+          sec.style.scrollMarginTop = 'var(--header-offset, 90px)';
+        });
+      });
+    </script>
   </body>
 </html>
