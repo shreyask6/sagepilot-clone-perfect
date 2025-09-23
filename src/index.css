@@ -304,11 +304,12 @@
     }
   }
 
-  /* Tighter breakpoint at 1000px: reduce further for fit */
+  /* Tighter breakpoint at 1000px: reduce font sizes by 1px ONLY for scroll states 1 and 2 */
   @media (max-width: 1000px) {
+    /* Only reduce font sizes for scroll states 1 and 2, NOT state 0 (initial) */
     .site-header[data-scroll-state="1"] .brand,
     .site-header[data-scroll-state="2"] .brand {
-      font-size: 0.9rem;
+      font-size: 0.9375rem; /* Reduced by 1px from 1rem (16px to 15px) */
     }
 
     .site-header[data-scroll-state="1"] .nav-links,
@@ -318,13 +319,71 @@
 
     .site-header[data-scroll-state="1"] .nav-links a,
     .site-header[data-scroll-state="2"] .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.875rem; /* Reduced by 1px from 0.95rem */
     }
 
     .site-header[data-scroll-state="1"] .cta,
     .site-header[data-scroll-state="2"] .cta {
-      font-size: 0.85rem;
-      padding: 6px 12px;
+      font-size: 0.8125rem; /* Reduced by 1px from 0.9rem */
+      padding: 6px 10px;
+    }
+
+    /* State 0 (initial) keeps original sizes - no font reduction */
+    .site-header[data-scroll-state="0"] .brand {
+      font-size: 1.25rem; /* Keeps original size */
+    }
+
+    .site-header[data-scroll-state="0"] .nav-links {
+      gap: 36px; /* Keeps original gap */
+    }
+
+    .site-header[data-scroll-state="0"] .nav-links a {
+      font-weight: 500; /* Keeps original styling */
+      font-size: inherit; /* Keeps original font size */
+    }
+
+    .site-header[data-scroll-state="0"] .cta {
+      padding: 8px 14px; /* Keeps original padding */
+      font-size: inherit; /* Keeps original font size */
+    }
+  }
+
+  /* Additional breakpoint at 900px: reduce by another 1px ONLY for scroll states 1 and 2 */
+  @media (max-width: 900px) {
+    /* Further reduce font sizes for scroll states 1 and 2, NOT state 0 (initial) */
+    .site-header[data-scroll-state="1"] .brand,
+    .site-header[data-scroll-state="2"] .brand {
+      font-size: 0.875rem; /* Reduced by another 1px from 0.9375rem (15px to 14px) */
+    }
+
+    .site-header[data-scroll-state="1"] .nav-links a,
+    .site-header[data-scroll-state="2"] .nav-links a {
+      font-size: 0.8125rem; /* Reduced by another 1px from 0.875rem (14px to 13px) */
+    }
+
+    .site-header[data-scroll-state="1"] .cta,
+    .site-header[data-scroll-state="2"] .cta {
+      font-size: 0.75rem; /* Reduced by another 1px from 0.8125rem (13px to 12px) */
+      padding: 6px 8px;
+    }
+
+    /* State 0 (initial) still keeps original sizes - no font reduction */
+    .site-header[data-scroll-state="0"] .brand {
+      font-size: 1.25rem; /* Keeps original size at all breakpoints */
+    }
+
+    .site-header[data-scroll-state="0"] .nav-links {
+      gap: 36px; /* Keeps original gap */
+    }
+
+    .site-header[data-scroll-state="0"] .nav-links a {
+      font-weight: 500; /* Keeps original styling */
+      font-size: inherit; /* Keeps original font size */
+    }
+
+    .site-header[data-scroll-state="0"] .cta {
+      padding: 8px 14px; /* Keeps original padding */
+      font-size: inherit; /* Keeps original font size */
     }
   }
 
@@ -411,5 +470,16 @@
     background: rgba(160, 255, 192, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(160, 255, 192, 0.2);
+  }
+
+  /* White text variant for sage-green badges */
+  .badge-white-text {
+    background: #10B981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-green);
   }
 }

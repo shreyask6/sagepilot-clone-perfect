@@ -125,67 +125,77 @@ export const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a href="#" className="flex items-center space-x-1">
-              <span className="text-xl font-bold text-gray-900">Builder</span>
-              <span className="text-xl font-bold text-sage-green">Ops</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-900">Builder</span>
+              <span className="text-lg sm:text-xl font-bold text-sage-green">Ops</span>
             </a>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button - Animated burger */}
             <button
               onClick={toggleMobileMenu}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors relative"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-gray-600" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-600" />
-              )}
+              <div className="w-6 h-6 flex flex-col justify-center items-center">
+                <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'
+                }`}></span>
+                <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
+                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}></span>
+                <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'
+                }`}></span>
+              </div>
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
+        {/* Mobile Navigation - Animated slide-down */}
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
           <div className="border-t border-gray-200/20 bg-white/95 backdrop-blur-md">
-            <div className="container mx-auto px-4 py-4 space-y-3">
+            <div className={`container mx-auto px-4 py-4 space-y-3 transform transition-all duration-300 ease-in-out ${
+              isMobileMenuOpen ? 'translate-y-0' : '-translate-y-4'
+            }`}>
               <a
                 href="#services"
                 onClick={(e) => handleSmoothScroll(e, '#services')}
-                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium"
+                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium transform hover:translate-x-2 duration-200"
               >
                 Services
               </a>
               <a
                 href="#work"
                 onClick={(e) => handleSmoothScroll(e, '#work')}
-                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium"
+                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium transform hover:translate-x-2 duration-200"
               >
                 Our Work
               </a>
               <a
                 href="#about"
                 onClick={(e) => handleSmoothScroll(e, '#about')}
-                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium"
+                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium transform hover:translate-x-2 duration-200"
               >
                 About
               </a>
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, '#contact')}
-                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium"
+                className="block py-2 text-gray-600 hover:text-sage-green transition-colors font-medium transform hover:translate-x-2 duration-200"
               >
                 Contact
               </a>
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, '#contact')}
-                className="block w-full text-center py-3 mt-4 bg-sage-green/10 text-sage-green-dark border border-sage-green/25 rounded-lg font-medium hover:bg-sage-green/20 transition-colors"
+                className="block w-full text-center py-3 mt-4 bg-sage-green/10 text-sage-green-dark border border-sage-green/25 rounded-lg font-medium hover:bg-sage-green/20 transition-all duration-200 hover:scale-105"
               >
                 📞 Book a Call
               </a>
             </div>
           </div>
-        )}
+        </div>
       </header>
     </>
   );

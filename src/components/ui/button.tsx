@@ -15,7 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        sage: "bg-sage-green text-sage-green-dark hover:bg-sage-green-dark hover:text-white shadow-soft transition-all duration-200",
+        sage: "bg-sage-green-dark text-white hover:bg-sage-green hover:text-sage-green-dark shadow-soft transition-all duration-200 border border-sage-green-dark hover:border-sage-green",
+        emeraldCta: "bg-[#10B981] text-white shadow-md border border-[#0ea371] transition-all duration-200 hover:bg-[#0ea371] hover:shadow-lg hover:scale-105 active:scale-100 active:shadow-md",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -20,28 +20,28 @@ const projects = [
     image: "⚡"
   },
   {
+    title: "VoiceCall AI Sales Agent",
+    category: "AI Agent",
+    description: "Intelligent sales bot that autonomously calls potential customers and conducts persuasive sales conversations using natural voice synthesis.",
+    outcome: "Automated outbound sales calls with human-like conversation",
+    tech: ["Python", "OpenAI", "Twilio", "ElevenLabs"],
+    image: "📞"
+  },
+  {
+    title: "SustainBuddy Maritime API",
+    category: "API Development",
+    description: "Customized chatbot API for maritime sustainability consulting with AI-powered conversational interface and document citations.",
+    outcome: "Complete API documentation & integration",
+    tech: ["Python", "OpenAI", "Nginx", "HTML/CSS/JS"],
+    image: "🌊"
+  },
+  {
     title: "Real Estate CRM Platform",
     category: "Web App + Mobile",
     description: "Custom CRM with mobile app for real estate agents, featuring automated lead scoring and follow-up sequences.",
     outcome: "300% increase in lead qualification efficiency",
     tech: ["Next.js", "React Native", "PostgreSQL", "Twilio"],
     image: "🏡"
-  },
-  {
-    title: "Manufacturing Dashboard",
-    category: "Internal Tool",
-    description: "Real-time production monitoring dashboard with predictive maintenance alerts and inventory tracking.",
-    outcome: "25% reduction in downtime",
-    tech: ["Vue.js", "Python", "InfluxDB", "Docker"],
-    image: "🏭"
-  },
-  {
-    title: "Fintech MVP",
-    category: "Product Prototype",
-    description: "Rapid prototype for a personal finance app that secured $2M in Series A funding within 6 months.",
-    outcome: "$2M funding secured",
-    tech: ["React", "Firebase", "Plaid API", "Chart.js"],
-    image: "💰"
   },
   {
     title: "Customer Support Bot",
@@ -108,8 +108,8 @@ export const ShowcaseSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="sage" size="lg" className="shadow-green">
-            📞 Book a Call to Start Your Project
+          <Button variant="emeraldCta" size="lg" asChild>
+            <a href="#contact">📞 Book a Call to Start Your Project</a>
           </Button>
         </div>
       </div>

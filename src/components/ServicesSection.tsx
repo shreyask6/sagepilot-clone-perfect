@@ -87,8 +87,8 @@ export const ServicesSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="sage" size="lg" className="shadow-green">
-            📞 Book a Call to Discuss Your Project
+          <Button variant="emeraldCta" size="lg" asChild>
+            <a href="#contact">📞 Book a Call to Discuss Your Project</a>
           </Button>
         </div>
       </div>

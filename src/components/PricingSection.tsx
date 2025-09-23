@@ -73,7 +73,7 @@ export const PricingSection = () => {
             <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-sage-green shadow-green' : 'shadow-soft'} glass border-0`}>
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-sage-green text-sage-green-dark px-4 py-1">
+                  <Badge className="badge-white-text px-4 py-1">
                     <Star className="h-3 w-3 mr-1" />
                     Most Popular
                   </Badge>

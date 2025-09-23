@@ -25,37 +25,68 @@ export const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="sage" size="lg" className="shadow-green">
-              📞 Book a Call
+            <Button variant="emeraldCta" size="lg" asChild>
+              <a href="#contact">📞 Book a Call</a>
             </Button>
-          </div>
-
-          <div className="space-y-3">
-            <p className="text-sm text-muted-foreground">Trusted by innovative companies</p>
-            <div className="flex flex-wrap items-center gap-2 sm:gap-4 opacity-60">
-              <div className="h-8 w-20 bg-muted rounded flex items-center justify-center text-xs font-medium">
-                STARTUPS
-              </div>
-              <div className="h-8 w-20 bg-muted rounded flex items-center justify-center text-xs font-medium">
-                SCALE-UPS
-              </div>
-              <div className="h-8 w-24 bg-muted rounded flex items-center justify-center text-xs font-medium">
-                ENTERPRISE
-              </div>
-            </div>
           </div>
         </div>
         
         <div className="relative animate-slide-in-right mt-8 lg:mt-0">
           <div className="relative">
-            <img
-              src={chatInterfaceMockup}
-              alt="Unified customer service interface showing multiple communication channels"
-              className="w-full h-auto rounded-2xl shadow-elevated glass-green animate-float max-w-lg mx-auto lg:max-w-none"
-            />
-            <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-sage-green text-sage-green-dark px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium shadow-green">
-              <span className="hidden sm:inline">Unified Experience, Multiple Channels</span>
-              <span className="sm:hidden">Unified Experience</span>
+            {/* Development Dashboard Mockup */}
+            <div className="w-full max-w-lg mx-auto lg:max-w-none bg-white rounded-2xl shadow-elevated p-6 animate-float">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+                <span className="text-xs text-gray-500">BuilderOps Dashboard</span>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-sage-green/10 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-sage-green-dark">🤖 AI Agent Development</span>
+                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Active</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-sage-green h-2 rounded-full" style={{width: '75%'}}></div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-blue-800">🌐 Web Application</span>
+                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">In Progress</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '50%'}}></div>
+                  </div>
+                </div>
+
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-purple-800">⚡ Automation Setup</span>
+                    <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Planning</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-purple-500 h-2 rounded-full" style={{width: '25%'}}></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="flex items-center justify-between text-xs text-gray-500">
+                  <span>3 Active Projects</span>
+                  <span>85% On Schedule</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 badge-white-text text-xs sm:text-sm">
+              <span className="hidden sm:inline">End-to-End Project Management</span>
+              <span className="sm:hidden">Project Dashboard</span>
             </div>
           </div>
         </div>
