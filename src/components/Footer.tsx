@@ -57,7 +57,7 @@ export const Footer = () => {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-6 border-t border-border gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 BuilderOps Technologies Pvt Ltd. All Rights Reserved
+            © 2025 BuilderOps. All Rights Reserved
           </p>
         </div>
       </div>

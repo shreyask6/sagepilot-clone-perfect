@@ -54,9 +54,9 @@ src/
 - `@/lib/utils` for utility functions
 
 **Development Integration**:
-- Lovable.dev integration for visual development
-- Component tagging for development mode tracking
 - ESLint configuration with React and TypeScript rules
+- Hot module replacement for fast development
+- TypeScript strict mode for type safety
 
 ### Component Conventions
 - Use TypeScript for all components
